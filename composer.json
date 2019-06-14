@@ -1,20 +1,23 @@
 {
   "name": "kolirt/laravel-sms",
-  "description": "Sms driver for laravel",
+  "description": "Sms driver for laravel.",
   "keywords": [
     "laravel",
     "sms",
-    "turbosms"
+    "turbosms",
+    "sigmasms"
   ],
   "license": "MIT",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "authors": [
     {
       "name": "Asan Abdurakhmanov",
       "email": "asan11@outlook.com"
     }
   ],
-  "require": {},
+  "require": {
+    "guzzlehttp/guzzle": "^6.3"
+  },
   "autoload": {
     "files": [
       "src/helpers.php"
