@@ -26,25 +26,6 @@ class Sms
         return $this;
     }
 
-    /**
-     * @param $recipient
-     * @param $text
-     * @return Response
-     */
-    public function send($recipient, $text): Response
-    {
-        return $this->driver->send($recipient, $text);
-    }
-
-    /**
-     * @param $message_id
-     * @return Response
-     */
-    public function status($message_id): Response
-    {
-        return $this->driver->status($message_id);
-    }
-
     public function __call($name, $arguments)
     {
         if (method_exists($this->driver, $name)) {

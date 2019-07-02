@@ -22,4 +22,12 @@ return [
         'package' => \Kolirt\Sms\Packages\SigmaSms::class
     ],
 
+    'smsc' => [
+        'login' => env('SMS_SMSC_LOGIN'),
+        'password' => env('SMS_SMSC_PASSWORD'),
+        'sender' => env('SMS_SMSC_SENDER'),
+        'time' => 0,
+        'package' => \Kolirt\Sms\Packages\Smsc::class
+    ],
+
 ];

@@ -12,6 +12,7 @@ $ php artisan sms:install
 All available drivers
 - [Turbosms](#turbosms)
 - [Sigmasms](#sigmasms)
+- [Smsc](#smsc)
 
 ### Turbosms
 Configure for ``config/service.php``
@@ -100,4 +101,36 @@ $messages = Kolirt\Sms\Facades\Sms::driver('sigmasms')->sendVk(['380900000000', 
 ##### Get status
 ```php
 $message = Kolirt\Sms\Facades\Sms::driver('sigmasms')->status($message_id);
+```
+
+### Smsc
+
+Configure for ``config/service.php``
+```php
+'smsc' => [
+    'login' => env('SMS_SMSC_LOGIN'),
+    'password' => env('SMS_SMSC_PASSWORD'),
+    'sender' => env('SMS_SMSC_SENDER'),
+    'time' => 0,
+    'package' => \Kolirt\Sms\Packages\Smsc::class
+],
+```
+
+##### Send message
+```php
+$message = Kolirt\Sms\Facades\Sms::driver('smsc')->send('380900000000', $message);
+
+// OR
+
+$messages = Kolirt\Sms\Facades\Sms::driver('smsc')->send(['380900000000', '380900000001'], $message);
+```
+
+##### Get status
+```php
+$message = Kolirt\Sms\Facades\Sms::driver('smsc')->status($recepient, $message_id);
+```
+
+##### Get balance
+```php
+$message = Kolirt\Sms\Facades\Sms::driver('smsc')->balance();
 ```
