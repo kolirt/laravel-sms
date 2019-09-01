@@ -32,6 +32,10 @@ class Smsc
             $recipient = implode(',', $recipient);
         }
 
+        if (is_array($text)) {
+            $text = implode('. ', $text);
+        }
+
         $response = $this->client->send_sms([
             'login'  => $this->login,
             'psw'    => $this->password,
