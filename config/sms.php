@@ -26,7 +26,7 @@ return [
         'login'    => env('SMS_SMSC_LOGIN'),
         'password' => env('SMS_SMSC_PASSWORD'),
         'sender'   => env('SMS_SMSC_SENDER'),
-        'time'     => env('SMS_SMSC_TIME', 3),
+        'time'     => env('SMS_SMSC_TIME', 0),
         'package'  => \Kolirt\Sms\Packages\Smsc::class
     ],
 
