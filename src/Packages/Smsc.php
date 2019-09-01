@@ -33,12 +33,12 @@ class Smsc
         }
 
         $response = $this->client->send_sms([
-            'login' => $this->login,
-            'psw' => $this->password,
+            'login'  => $this->login,
+            'psw'    => $this->password,
             'phones' => $recipient,
-            'mes' => $text,
+            'mes'    => $text,
             'sender' => $this->sender,
-            'time' => $this->time
+            'time'   => $this->time
         ])->sendresult;
 
         if (!isset($response->error)) {
@@ -87,10 +87,10 @@ class Smsc
     {
         $response = $this->client->get_status([
             'login' => $this->login,
-            'psw' => $this->password,
+            'psw'   => $this->password,
             'phone' => $recipient,
-            'id' => $message_id,
-            'all' => '0'
+            'id'    => $message_id,
+            'all'   => '0'
         ])->statusresult;
 
         if ($response->error == 0) {
@@ -185,7 +185,7 @@ class Smsc
     {
         $result = $this->client->get_balance([
             'login' => $this->login,
-            'psw' => $this->password
+            'psw'   => $this->password
         ])->balanceresult;
 
         if ($result->error == 0) {

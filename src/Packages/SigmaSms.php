@@ -25,7 +25,7 @@ class SigmaSms implements Sms
 
         $this->client = new Client([
             'base_uri' => $this->api,
-            'timeout' => 10
+            'timeout'  => 10
         ]);
 
         if (!cache()->get('sigmasms')) {
@@ -50,12 +50,12 @@ class SigmaSms implements Sms
                 'headers' => [
                     'Authorization' => $this->token
                 ],
-                'json' => [
+                'json'    => [
                     'recipient' => $recipient,
-                    'type' => 'sms',
-                    'payload' => [
+                    'type'      => 'sms',
+                    'payload'   => [
                         'sender' => config('sms.sigmasms.sender.sms'),
-                        'text' => $text
+                        'text'   => $text
                     ]
                 ],
             ]);
@@ -86,16 +86,16 @@ class SigmaSms implements Sms
                 'headers' => [
                     'Authorization' => $this->token
                 ],
-                'json' => [
+                'json'    => [
                     'recipient' => $recipient,
-                    'type' => 'vk',
-                    'payload' => [
+                    'type'      => 'vk',
+                    'payload'   => [
                         'sender' => config('sms.sigmasms.sender.viber'),
-                        'text' => $text,
-                        'image' => $image,
+                        'text'   => $text,
+                        'image'  => $image,
                         'button' => [
                             'text' => $button_text,
-                            'url' => $button_url
+                            'url'  => $button_url
                         ]
                     ]
                 ],
@@ -126,13 +126,13 @@ class SigmaSms implements Sms
                 'headers' => [
                     'Authorization' => $this->token
                 ],
-                'json' => [
+                'json'    => [
                     'recipient' => $recipient,
-                    'type' => 'whatsapp',
-                    'payload' => [
+                    'type'      => 'whatsapp',
+                    'payload'   => [
                         'sender' => config('sms.sigmasms.sender.whats_app'),
-                        'text' => $text,
-                        'image' => $image
+                        'text'   => $text,
+                        'image'  => $image
                     ]
                 ],
             ]);
@@ -161,12 +161,12 @@ class SigmaSms implements Sms
                 'headers' => [
                     'Authorization' => $this->token
                 ],
-                'json' => [
+                'json'    => [
                     'recipient' => $recipient,
-                    'type' => 'vk',
-                    'payload' => [
+                    'type'      => 'vk',
+                    'payload'   => [
                         'sender' => config('sms.sigmasms.sender.vk'),
-                        'text' => $text
+                        'text'   => $text
                     ]
                 ],
             ]);
@@ -188,7 +188,7 @@ class SigmaSms implements Sms
                 'headers' => [
                     'Authorization' => $this->token
                 ],
-                'json' => [],
+                'json'    => [],
             ]);
 
             if ($response->getStatusCode() === 200) {

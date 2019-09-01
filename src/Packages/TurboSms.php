@@ -31,7 +31,7 @@ class TurboSms implements Sms
     private function login()
     {
         $this->client->Auth([
-            'login' => $this->login,
+            'login'    => $this->login,
             'password' => $this->password
         ])->AuthResult;
     }
@@ -43,9 +43,9 @@ class TurboSms implements Sms
         }
 
         $response = $this->client->SendSMS([
-            'sender' => $this->sender,
+            'sender'      => $this->sender,
             'destination' => $recipient,
-            'text' => $text
+            'text'        => $text
         ])->SendSMSResult->ResultArray;
 
         if (is_string($response)) {
