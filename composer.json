@@ -1,0 +1,39 @@
+{
+  "name": "kolirt/laravel-sms",
+  "description": "Sms driver for laravel.",
+  "keywords": [
+    "laravel",
+    "sms",
+    "turbosms",
+    "sigmasms",
+    "smsc"
+  ],
+  "license": "MIT",
+  "version": "1.0.7",
+  "authors": [
+    {
+      "name": "kolirt"
+    }
+  ],
+  "require": {
+    "guzzlehttp/guzzle": "> 6.0.0"
+  },
+  "autoload": {
+    "files": [
+      "src/helpers.php"
+    ],
+    "psr-4": {
+      "Kolirt\\Sms\\": "src"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Kolirt\\Sms\\ServiceProvider"
+      ],
+      "aliases": {
+        "Translations": "Kolirt\\Sms\\Facade\\Sms"
+      }
+    }
+  }
+}
